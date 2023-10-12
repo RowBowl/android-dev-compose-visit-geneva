@@ -1,4 +1,4 @@
-# android-dev-compose-visit-geneva
+# Visit Geneva App
 A simple multi-screen app that makes use of Navigation and the WindowSizeClass API within Jetpack Compose
 
 This is a simple app that showcases the different activities and places to visit in the city of

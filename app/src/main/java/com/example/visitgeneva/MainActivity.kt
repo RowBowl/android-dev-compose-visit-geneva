@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.visitgeneva.ui.VisitGenevaApp
 import com.example.visitgeneva.ui.theme.VisitGenevaTheme
 
 /**
@@ -38,7 +39,7 @@ import com.example.visitgeneva.ui.theme.VisitGenevaTheme
  * 3. Create larger composables for groupings of these items (List only, list and detail, home screen)
  * 4. Make use of lazyColumns and LazyGrids, and use local data within data package
  * 5. Make adaptive for screen sizes, and customize layout/navigation based on screen size
- * 6. Themes, colors, typography, string resouces, cleanup
+ * 6. Themes, colors, typography, string resources, cleanup
  */
 
 
@@ -52,6 +53,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    VisitGenevaApp()
                 }
             }
         }

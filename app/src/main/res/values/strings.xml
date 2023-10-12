@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Visit Geneva</string>
+    <string name="example_category">Example Category</string>
+    <string name="category_title_1">Breakfast</string>
 </resources>

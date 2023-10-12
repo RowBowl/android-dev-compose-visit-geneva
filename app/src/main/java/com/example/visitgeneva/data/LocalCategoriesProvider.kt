@@ -12,6 +12,7 @@ object LocalCategoriesProvider {
             Category(
                 id = 0,
                 titleResId = R.string.category_title_1,
+                subTitleResId = R.string.category_subtitle_1,
                 iconResId = R.drawable.category_icon_1,
                 recommendationsCount = 0
             )

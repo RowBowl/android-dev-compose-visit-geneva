@@ -6,6 +6,7 @@ import androidx.annotation.StringRes
 data class Category(
     val id: Int,
     @StringRes val titleResId: Int,
+    @StringRes val subTitleResId: Int,
     @DrawableRes val iconResId: Int,
     val recommendationsCount: Int
 )

@@ -133,7 +133,7 @@ fun CategoryGridItemListPreview() {
             category = LocalCategoriesProvider.defaultCategory,
             onCategoryClick = {},
             onBackPressed = {},
-            modifier = Modifier.size(400.dp)
+            modifier = Modifier.size(300.dp)
         ) 
     }
 }

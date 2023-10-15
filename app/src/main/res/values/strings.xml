@@ -5,5 +5,9 @@
     <string name="category_subtitle_1">Morning Dine-out Options</string>
     <string name="category_recommendation_title_1"><![CDATA[Birdie Food & Coffee]]></string>
     <string name="category_recommendation_description_1"><![CDATA[Cappuccinos, espressos & juices, plus breakfast, salads & sandwiches, in a tranquil little cafe.]]></string>
-    <string name="category_detail_1">Start Your Day Right: Explore Our Breakfast Spots</string>
+    <string name="category_detail_1">Start Your Day Right: Explore Some Breakfast Spots</string>
+    <string name="category_recommendation_description_2">Brunch Restraunt</string>
+    <string name="category_recommendation_title_2"><![CDATA[Madame - Brunch & Coffee]]></string>
+    <string name="category_recommendation_title_3">Cottage Café</string>
+    <string name="category_recommendation_description_3">Low-key park cafe set in a former gardener\'s cottage with a terrace, offering European dishes</string>
 </resources>

@@ -45,7 +45,7 @@ fun VisitGenevaApp(windowSize: WindowSizeClass) {
     ){ innerPadding ->
         if(uiState.isShowingListPage) {
             CategoryList(
-                categories = uiState.categoryGrid,
+                categories = uiState.categoryList,
                 contentPadding = innerPadding,
                 listType = listType,
                 onCategoryClick = {
@@ -60,12 +60,6 @@ fun VisitGenevaApp(windowSize: WindowSizeClass) {
                 onCategoryClick = {},
                 onBackPressed =  { viewModel.navigateToListPage() }
             )
-            /*CategoryDetailsAndItems(
-                currentCategory = uiState.currentCategory,
-                isFullScreen = true,
-                onBackPressed = {viewModel.navigateToListPage()},
-                contentPadding = innerPadding
-            )*/
         }
     }
 }

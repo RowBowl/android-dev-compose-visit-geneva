@@ -17,11 +17,24 @@ object LocalCategoriesProvider {
                 imageResId = R.drawable.category_icon_1,
                 recommendations = listOf(
                     Recommendation(
-                        id = 0,
+                        id = 1,
                         titleResId = R.string.category_recommendation_title_1,
                         descriptionResId = R.string.category_recommendation_description_1,
                         imageResId = R.drawable.category_recommendation_img_1
-                    )
+                    ),
+                    Recommendation(
+                        id = 2,
+                        titleResId = R.string.category_recommendation_title_2,
+                        descriptionResId = R.string.category_recommendation_description_2,
+                        imageResId = R.drawable.category_recommendation_img_2
+                    ),
+                    Recommendation(
+                        id = 3,
+                        titleResId = R.string.category_recommendation_title_3,
+                        descriptionResId = R.string.category_recommendation_description_3,
+                        imageResId = R.drawable.category_recommendation_img_3
+                    ),
+
                 )
             )
         )

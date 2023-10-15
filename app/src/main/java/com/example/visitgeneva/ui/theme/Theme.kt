@@ -87,6 +87,6 @@ fun VisitGenevaTheme(
   MaterialTheme(
       colorScheme = colors,
       content = content,
-      shapes = shapes
+      shapes = Shapes
   )
 }

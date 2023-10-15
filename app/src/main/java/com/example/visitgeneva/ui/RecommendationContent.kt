@@ -34,22 +34,6 @@ import com.example.visitgeneva.ui.theme.VisitGenevaTheme
 import com.example.visitgeneva.utils.UiUtils
 
 
-@Composable
-fun RecommendationList(
-    recommendations: List<Recommendation>,
-    modifier: Modifier = Modifier
-) {
-    LazyColumn(modifier = modifier) {
-        items(recommendations) {recommendation ->
-            RecommendationItem(
-                recommendation = recommendation,
-                showFullDetail = false,
-                onRecClick = {},
-                modifier = Modifier
-            )
-        }
-    }
-}
 
 @Composable
 fun RecommendationItem(

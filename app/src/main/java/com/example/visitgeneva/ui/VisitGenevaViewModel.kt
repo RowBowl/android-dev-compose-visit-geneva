@@ -26,12 +26,12 @@ class VisitGenevaViewModel : ViewModel() {
 
     fun navigateToListPage() {
         _uiState.update {
-            it.copy(isShowingGridPage = true)
+            it.copy(isShowingListPage = true)
         }
     }
     fun navigateToDetailPage() {
         _uiState.update {
-            it.copy(isShowingGridPage = false)
+            it.copy(isShowingListPage = false)
         }
     }
 }
@@ -39,5 +39,5 @@ class VisitGenevaViewModel : ViewModel() {
 data class VisitGenevaUiState(
     val categoryGrid: List<Category> = emptyList(),
     val currentCategory: Category = LocalCategoriesProvider.defaultCategory,
-    val isShowingGridPage: Boolean = true
+    val isShowingListPage: Boolean = true
 )

@@ -2,6 +2,7 @@ package com.example.visitgeneva.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.MaterialTheme.shapes
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
@@ -84,7 +85,8 @@ fun VisitGenevaTheme(
   }
 
   MaterialTheme(
-    colorScheme = colors,
-    content = content
+      colorScheme = colors,
+      content = content,
+      shapes = shapes
   )
 }

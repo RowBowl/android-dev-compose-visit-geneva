@@ -3,4 +3,7 @@
     <string name="example_category">Example Category</string>
     <string name="category_title_1">Breakfast</string>
     <string name="category_subtitle_1">Morning Dine-out Options</string>
+    <string name="category_recommendation_title_1"><![CDATA[Birdie Food & Coffee]]></string>
+    <string name="category_recommendation_description_1"><![CDATA[Cappuccinos, espressos & juices, plus breakfast, salads & sandwiches, in a tranquil little cafe.]]></string>
+    <string name="category_detail_1">Start Your Day Right: Explore Our Breakfast Spots</string>
 </resources>

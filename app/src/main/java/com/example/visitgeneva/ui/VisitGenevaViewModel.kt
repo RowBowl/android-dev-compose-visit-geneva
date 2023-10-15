@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.update
 class VisitGenevaViewModel : ViewModel() {
     private val _uiState = MutableStateFlow(
         VisitGenevaUiState(
-            categoryList = LocalCategoriesProvider.getCategories(),
+            categoryGrid = LocalCategoriesProvider.getCategories(),
             currentCategory = LocalCategoriesProvider.getCategories().getOrElse(0) {
                 LocalCategoriesProvider.defaultCategory
             },
@@ -26,18 +26,18 @@ class VisitGenevaViewModel : ViewModel() {
 
     fun navigateToListPage() {
         _uiState.update {
-            it.copy(isShowingListPage = true)
+            it.copy(isShowingGridPage = true)
         }
     }
     fun navigateToDetailPage() {
         _uiState.update {
-            it.copy(isShowingListPage = false)
+            it.copy(isShowingGridPage = false)
         }
     }
 }
 
 data class VisitGenevaUiState(
-    val categoryList: List<Category> = emptyList(),
+    val categoryGrid: List<Category> = emptyList(),
     val currentCategory: Category = LocalCategoriesProvider.defaultCategory,
-    val isShowingListPage: Boolean = true
+    val isShowingGridPage: Boolean = true
 )

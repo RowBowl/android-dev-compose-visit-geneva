@@ -3,11 +3,9 @@ package com.example.visitgeneva.model
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
-data class Category(
+data class Recommendation(
     val id: Int,
     @StringRes val titleResId: Int,
-    @StringRes val subTitleResId: Int,
-    @StringRes val detailsResId: Int,
+    @StringRes val descriptionResId: Int,
     @DrawableRes val imageResId: Int,
-    val recommendations: List<Recommendation>
 )

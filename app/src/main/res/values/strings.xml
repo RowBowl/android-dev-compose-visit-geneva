@@ -10,4 +10,7 @@
     <string name="category_recommendation_title_2"><![CDATA[Madame - Brunch & Coffee]]></string>
     <string name="category_recommendation_title_3">Cottage Café</string>
     <string name="category_recommendation_description_3">Low-key park cafe set in a former gardener\'s cottage with a terrace, offering European dishes</string>
+    <string name="category_title_2">Hotels</string>
+    <string name="category_subtitle_2">Elevate Your Stay</string>
+    <string name="category_detail_2">Explore our Hotels category to discover a world of accommodation options for your next adventure. From luxurious resorts to cozy boutique inns, we\'ve curated a diverse collection of hotels to suit every traveler\'s needs.</string>
 </resources>

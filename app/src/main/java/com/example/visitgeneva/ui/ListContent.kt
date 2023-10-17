@@ -1,29 +1,16 @@
 package com.example.visitgeneva.ui
 
-import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Card
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.dimensionResource
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.visitgeneva.R
 import com.example.visitgeneva.data.LocalCategoriesProvider
 import com.example.visitgeneva.model.Category
 import com.example.visitgeneva.model.Recommendation
@@ -39,6 +26,7 @@ fun CategoryList(
     categories: List<Category>,
     listType: ListType,
     onCategoryClick: (Category) -> Unit,
+    onRecClick: (Recommendation) -> Unit,
     contentPadding: PaddingValues = PaddingValues(0.dp),
     modifier: Modifier = Modifier
 ) {
@@ -53,9 +41,9 @@ fun CategoryList(
                     CategoryItem(
                         itemType = ItemCardType.ListItem,
                         category = category,
-                        onCategoryClick = onCategoryClick,
-                        onBackPressed = {},
-                        modifier = Modifier.size(300.dp)
+                        onItemClick = onCategoryClick,
+                        onRecClick = onRecClick,
+                        modifier = Modifier.width(300.dp).height(400.dp)
                     )
                 }
             }
@@ -69,10 +57,10 @@ fun CategoryList(
                 items(categories) {category ->
                     CategoryItem(
                         itemType = ItemCardType.ListItem,
-                        category = LocalCategoriesProvider.defaultCategory,
-                        onCategoryClick = onCategoryClick,
-                        onBackPressed = {},
-                        modifier = Modifier.height(200.dp)
+                        category = category,
+                        onItemClick = onCategoryClick,
+                        onRecClick = onRecClick,
+                        modifier = Modifier.width(400.dp).height(200.dp)
                     )
                 }
             }
@@ -83,20 +71,25 @@ fun CategoryList(
 @Composable
 fun RecommendationList(
     recommendations: List<Recommendation>,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onRecClick: (Recommendation) -> Unit
 ) {
-    LazyColumn(modifier = modifier) {
+    LazyColumn(
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+        modifier = modifier
+    ) {
         items(recommendations) {recommendation ->
             RecommendationItem(
                 recommendation = recommendation,
                 showFullDetail = false,
-                onRecClick = {},
+                onRecClick = onRecClick,
                 modifier = Modifier
             )
         }
     }
 }
 
+/*
 
 @Composable
 fun CategoryDetailsAndRecommendations(
@@ -134,7 +127,8 @@ fun CategoryDetailsAndRecommendations(
         }
     }
 }
-
+*/
+/*
 @Composable
 @Preview
 fun CategoryDetailsAndRecommendationsPreview() {
@@ -145,7 +139,7 @@ fun CategoryDetailsAndRecommendationsPreview() {
             onBackPressed = { }
         )
     }
-}
+}*/
 
 @Composable
 @Preview
@@ -155,6 +149,7 @@ fun CategoryListHorizontalPreview() {
             categories = LocalCategoriesProvider.getCategories(),
             listType = ListType.Horizontal,
             onCategoryClick = {},
+            onRecClick = {},
             modifier = Modifier
         )
     }
@@ -167,6 +162,7 @@ fun CategoryListVerticalPreview() {
             categories = LocalCategoriesProvider.getCategories(),
             listType = ListType.Vertical,
             onCategoryClick = {},
+            onRecClick = {},
             modifier = Modifier
         )
     }

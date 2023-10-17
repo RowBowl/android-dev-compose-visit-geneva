@@ -1,10 +1,12 @@
 package com.example.visitgeneva.ui
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
@@ -19,13 +21,13 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.ExperimentalTextApi
-import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.visitgeneva.data.LocalCategoriesProvider
 import com.example.visitgeneva.model.Category
+import com.example.visitgeneva.model.Recommendation
+import com.example.visitgeneva.ui.components.CategoryImage
 import com.example.visitgeneva.ui.theme.VisitGenevaTheme
 import com.example.visitgeneva.utils.ItemCardType
 import com.example.visitgeneva.utils.UiUtils
@@ -37,16 +39,16 @@ import com.example.visitgeneva.utils.drawCardBackground
 fun CategoryItem(
     itemType: ItemCardType,
     category: Category,
-    onCategoryClick: (Category) -> Unit,
     modifier: Modifier = Modifier,
-    onBackPressed: () -> Unit
+    onItemClick: (Category) -> Unit,
+    onRecClick: (Recommendation) -> Unit,
 ) {
     val mod: Modifier
     val brush: Brush
 
     when (itemType) {
         ItemCardType.ListItem -> {
-            mod = Modifier
+            mod = Modifier.fillMaxWidth()
             brush = UiUtils.brush1
         }
         ItemCardType.DetailItem -> {
@@ -61,12 +63,18 @@ fun CategoryItem(
         Box(
             modifier = mod
                 .drawCardBackground(brush)
+                .clickable(
+                    enabled = true,
+                    onClickLabel = "Go to details screen",
+                    role = null,
+                    onClick = { onItemClick(category) }
+                )
         ) {
             CategoryImage(
                 category = category,
                 modifier = Modifier
                     .align(Alignment.CenterEnd)
-                    .alpha(0.85f)
+                    .alpha(0.65f)
             )
             Column (
                 modifier = Modifier
@@ -106,6 +114,7 @@ fun CategoryItem(
                         )
                         RecommendationList(
                             recommendations = category.recommendations,
+                            onRecClick = onRecClick,
                             modifier = Modifier
                         )
                     }
@@ -115,40 +124,33 @@ fun CategoryItem(
     }
 }
 
-@Composable
-fun CategoryImage(category: Category, modifier: Modifier = Modifier) {
-    Image(
-        painter = painterResource(id = category.imageResId),
-        contentDescription = "Category Grid Item",
-        modifier = modifier
-    )
-}
 
 @Composable
 @Preview
-fun CategoryGridItemListPreview() {
+fun CategoryListItemListPreview() {
     VisitGenevaTheme {
         CategoryItem(
             itemType = ItemCardType.ListItem,
             category = LocalCategoriesProvider.defaultCategory,
-            onCategoryClick = {},
-            onBackPressed = {},
-            modifier = Modifier.size(300.dp)
-        ) 
+            modifier = Modifier.size(300.dp),
+            onItemClick = { },
+            onRecClick ={ }
+        )
     }
 }
 
 @Composable
 @Preview
-fun CategoryGridItemDetailPreview() {
+fun CategoryListItemDetailPreview() {
     VisitGenevaTheme {
         CategoryItem(
             itemType = ItemCardType.DetailItem,
             category = LocalCategoriesProvider.defaultCategory,
-            onCategoryClick = {},
-            onBackPressed = {},
-            modifier = Modifier
+            modifier = Modifier,
+            onItemClick = { },
+            onRecClick ={ }
         )
+
     }
 }
 
